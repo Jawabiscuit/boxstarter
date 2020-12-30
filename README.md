@@ -15,8 +15,8 @@ https://boxstarter.org/Learn/WebLauncher
 
 The script code is organized in a hierarchy
 
-**Recipes
-**
+**Recipes**
+
 A recipe is the script you run. It calls multiple helper scripts. These currently live in
 the root of the project (dev_app.ps1, dev_webnodejs.ps1, etc.)
 
@@ -30,8 +30,7 @@ helper scripts (you don't run helper scripts directly). The helper scripts live 
 
 These scripts should cover a lot of what you need but will not likely match your personal
 preferences exactly. In this case please fork the project and change the scripts however
-you desire. We really appreciate PR's back to this project if you have recommended
-changes.
+you desire.
 
 *Note: The one-click links use the following format. When working out of a different Fork
 or Branch you'll want to update the links as follows:*
@@ -50,8 +49,8 @@ it's finished.
 |---------|---------|
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Jawabiscuit/boxstarter/master/GameDev.ps1'>GameDev</a>     | Windows Game Development (Visual Studio, Windows SDK, C++, .NET, Unreal) |
 
-**Notes:
-**
+**Notes:**
+
 1. If you are using WSL there's a recommended followup step after running the setup
 script. When the script finishes you will only have a root user with a blank password. You
 should manually create a non-root user via `$ sudo adduser [USERNAME] sudo` with a non-blank

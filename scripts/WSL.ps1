@@ -1,0 +1,38 @@
+# Windows subsystem for Linux
+choco install --limitoutput --source windowsfeatures Microsoft-Windows-Subsystem-Linux
+
+# --- Ubuntu ---
+# TODO: Move this to choco install once --root is included in that package
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Add-AppxPackage -Path ~/Ubuntu.appx
+# run the distro once and have it install locally with root user, unset password
+
+RefreshEnv
+Ubuntu1804 install --root
+Ubuntu1804 run apt update
+Ubuntu1804 run apt upgrade -y
+
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804 run apt install python2.7 python-pip -y 
+# Ubuntu1804 run apt install python-numpy python-scipy -y
+# Ubuntu1804 run pip install pandas
+
+write-host "Finished installing tools inside the WSL distro"
+
+<#
+NOTE: Other distros can be scripted the same way for example:
+
+# --- SLES ---
+# Install SLES Store app
+Invoke-WebRequest -Uri https://aka.ms/wsl-sles-12 -OutFile ~/SLES.appx -UseBasicParsing
+Add-AppxPackage -Path ~/SLES.appx
+# Launch SLES
+sles-12.exe
+
+# --- openSUSE ---
+Invoke-WebRequest -Uri https://aka.ms/wsl-opensuse-42 -OutFile ~/openSUSE.appx -UseBasicParsing
+Add-AppxPackage -Path ~/openSUSE.appx
+# Launch openSUSE
+opensuse-42.exe
+#>
+

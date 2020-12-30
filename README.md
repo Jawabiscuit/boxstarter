@@ -47,7 +47,7 @@ it's finished.
 
 |Click link to run  |Description  |
 |---------|---------|
-|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Jawabiscuit/boxstarter/master/GameDev.ps1'>GameDev</a>     | Windows Game Development (Visual Studio, Windows SDK, C++, .NET, Unreal) |
+|<a href='http://boxstarter.org/package/url?https://github.com/Jawabiscuit/boxstarter/raw/master/GameDev.ps1'>GameDev</a>     | Windows Game Development (Visual Studio, Windows SDK, C++, .NET, Unreal) |
 
 **Notes:**
 

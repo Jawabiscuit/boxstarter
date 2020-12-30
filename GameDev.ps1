@@ -22,9 +22,9 @@ function executeScript {
 #--- Setting up Windows ---
 executeScript "Initialize.ps1";
 executeScript "SystemConfiguration.ps1";
-executeScript "FileExplorerSettings.ps1";
 executeScript "Win10InitialStartupScript.ps1";
 executeScript "DebloatWindows10.ps1";
+executeScript "FileExplorerSettings.ps1";
 executeScript "CommonDevTools.ps1";
 executeScript "CustomDevTools.ps1";
 executeScript "GitConfig.ps1";

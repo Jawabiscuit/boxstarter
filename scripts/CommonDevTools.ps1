@@ -18,6 +18,3 @@ choco install --limitoutput filezilla
 
 choco install chocolatey --limitoutput
 choco install boxstarter --limitoutput
-
-# pin apps that update themselves
-choco pin add -n=vscode

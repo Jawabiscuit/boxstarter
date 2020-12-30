@@ -1,5 +1,12 @@
 <#
 Debloat Windows 10
+.Description
+  Download git archive and run scripts to debloat a new Windows 10 install.
+.Example
+  1) Open powershell as administrator
+  2) `Set-ExecutionPolicy AllSigned -Force` to allow execution of scripts
+  3) Find the raw URL to this gist
+  4) `iex ((new-object net.webclient).DownloadString("https://gist.githubusercontent.com/<USER>/.../debloat-windows-10.ps1")` to execute
 #>
 
 # Download the archive for the latest updates

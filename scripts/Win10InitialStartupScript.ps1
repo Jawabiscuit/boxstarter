@@ -13,8 +13,8 @@ Win10 Initial Startup Script
 #>
 
 # Download the archive for the latest updates
-$url = "https://github.com/Disassembler0/Win10-Initial-Setup-Script/archive/master.zip"
-$presetUrl = "https://gist.githubusercontent.com/Jawabiscuit/31bce47c991528541b6a4fdedff7b15a/raw/685b9656163a52e754f8bbf546f1da841b749b67/win10-iss.preset"
+$url = "https://github.com/Jawabiscuit/Win10-Initial-Setup-Script/archive/master.zip"
+# $presetUrl = "https://gist.githubusercontent.com/Jawabiscuit/31bce47c991528541b6a4fdedff7b15a/raw/76f712cff3e47cdb4f5fb503dd92ab88ae23009d/win10-iss.preset"
 $presetFile = "win10-iss.preset"
 $archiveName = "master.zip"
 $installDir = Join-Path $env:UserProfile "Tools\win10-initial-setup-script"
@@ -43,18 +43,22 @@ if (Test-Path "$archive") {
     Write-Error "[installer.win10-initial-setup-script] Download failed"
 }
 
+<#
 if (Test-Path $win10IssDir) {
-    cd $win10IssDir
-    wget $presetUrl -outfile $presetFile
+    $outFile = Join-Path $win10IssDir $presetFile
+    wget $presetUrl -outfile $outFile
 }
+#>
 
 # Set policy before executing scripts
 Set-ExecutionPolicy Bypass -Scope Process -Force
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
 
-if (Test-Path $presetFile) {
+if (Test-Path (Join-Path $win10IssDir $presetFile)) {
+    $restoreDir = pwd
+    cd $win10IssDir
     $script = '.\Win10.ps1'
-    $params = '-include Win10.psm1 -preset ' + $presetFile
+    $params = '-include Win10.psm1 -include Win10-Plus.psm1 -preset ' + $presetFile
     iex "$script $params"
+    cd $restoreDir
 }
-

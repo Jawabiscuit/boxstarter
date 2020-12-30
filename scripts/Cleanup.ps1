@@ -1,9 +1,6 @@
 # Revert No confirmation feature
 choco feature disable --name=allowGlobalConfirmation
 
-# Restore temporary settings
-# Enable-UAC
-
 # Cleanup temporary directories
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "C:\eula*.txt"
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "C:\install*"
@@ -35,3 +32,5 @@ Install-WindowsUpdate -AcceptEula
 
 # Enable Microsoft Update
 Enable-MicrosoftUpdate
+
+Enable-UAC

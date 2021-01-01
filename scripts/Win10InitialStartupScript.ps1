@@ -17,7 +17,7 @@ $url = "https://github.com/Jawabiscuit/Win10-Initial-Setup-Script/archive/master
 # $presetUrl = "https://gist.githubusercontent.com/Jawabiscuit/31bce47c991528541b6a4fdedff7b15a/raw/76f712cff3e47cdb4f5fb503dd92ab88ae23009d/win10-iss.preset"
 $presetFile = "win10-iss.preset"
 $archiveName = "master.zip"
-$installDir = Join-Path $env:UserProfile "Tools\win10-initial-setup-script"
+$installDir = "C:\tools\win10-initial-setup-script"
 $archive = Join-Path $installDir $archiveName
 $win10IssDir = Join-Path $installDir "Win10-Initial-Setup-Script-master"
 
@@ -58,7 +58,7 @@ if (Test-Path (Join-Path $win10IssDir $presetFile)) {
     $restoreDir = pwd
     cd $win10IssDir
     $script = '.\Win10.ps1'
-    $params = '-include Win10.psm1 -include Win10-Plus.psm1 -preset ' + $presetFile
+    $params = '-include Win10.psm1 -include Win10-Plus.psm1 -preset ' + $presetFile + ' !DisableOneDrive !UninstallOneDrive !Restart !WaitForKey'
     iex "$script $params"
     cd $restoreDir
 }

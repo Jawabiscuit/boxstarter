@@ -1,17 +1,17 @@
-# Game-centric apps
+## Common Game Apps
+# TODO: Don't install in a VM environment
+# choco install geforce-experience
+# choco install geforce-game-ready-driver
 
-choco install --limitoutput geforce-experience
-choco install --limitoutput geforce-game-ready-driver
-
-choco install --limitoutput itch
-choco install --limitoutput slack
-choco install --limitoutput discord
-choco install --limitoutput twitch
+choco install itch
+choco install slack
+choco install discord
+choco install twitch
 
 # Screenshot/Streaming
-choco install --limitoutput sharex
-choco install --limitoutput obs-studio
+choco install sharex
+choco install obs-studio
 
 # Game launcher
-choco install --limitoutput epicgameslauncher
-choco install --limitoutput steam
+choco install epicgameslauncher
+choco install steam

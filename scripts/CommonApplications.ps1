@@ -1,39 +1,38 @@
-# Common tools for users typically need
-
+## Common Applications
 # Internet
-choco install --limitoutput firefox
-choco install --limitoutput chrome
+choco install firefox
+choco install googlechrome.dev
 
 # Utils
-choco install --limitoutput f.lux
-choco install --limitoutput adobereader
-choco install --limitoutput etcher
+choco install f.lux
+choco install adobereader
+choco install etcher
 
 # Social
-choco install --limitoutput zoom
+choco install zoom
 
 # Media
-choco install --limitoutput spotify
-choco install --limitoutput vlc
-choco install --limitoutput k-litecodecpack-standard
+# TODO: Remote error
+# choco install spotify
+choco install vlc
+choco install k-litecodecpack-standard
 
 # VNC
-choco install --limitoutput nomachine
-choco install --limitoutput realvnc
+choco install nomachine
+choco install realvnc
 
 # Image Editor
-choco install --limitoutput inkscape
-choco install --limitoutput gimp
+choco install inkscape
+choco install gimp
 
 # Document Creation
-choco install --limitoutput libreoffice-fresh
+choco install libreoffice-fresh
 
 # Security
 # TODO: Spybot S&D and Anti-Beacon
 
 # Pin apps that update themselves
 choco pin add -n=firefox
-choco pin add -n=chrome
 
 # Pin items to the taskbar
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
+Install-ChocolateyPinnedTaskBarItem -TargetFilePath "${env:LOCALAPPDATA}\Google\Chrome\Application\chrome.exe"

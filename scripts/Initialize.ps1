@@ -13,4 +13,3 @@ Update-ExecutionPolicy Unrestricted
 
 # Disable Microsoft and Windows update
 Disable-MicrosoftUpdate
-Stop-UpdateServices

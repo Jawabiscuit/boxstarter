@@ -1,31 +1,45 @@
+## Custom Dev Tools
 # Tools that vary from by machine and developer
 
 # Editor
-choco install --limitoutput emacs --version 24.5.0.20191123
+choco install emacs --version 24.5.0.20191123
 
-choco install --limitoutput pandoc
-choco install --limitoutput miktex
-choco install --limitoutput vcxsrv
+choco install pandoc
+choco install miktex
+choco install vcxsrv
 
 # Database
-choco install --limitoutput pgadmin4
-choco install --limitoutput postgresql10
+# Temporarily enable/disable features to bypass checksums
+# choco feature disable -n=checksumFiles
+# choco feature enable -n=allowEmptyChecksums
+# 
+# try {
+#     # TODO: This is taking too long, something not right...
+#     choco install pgadmin4
+#     choco install postgresql10
+# }
+# finally {
+#     choco feature enable -n=checksumFiles
+#     choco feature disable -n=allowEmptyChecksums
+# }
 
 # Terminal
-choco install --limitoutput microsoft-windows-terminal    
+# TODO: This is hanging after install!
+# choco install microsoft-windows-terminal    
 
 # Package Mgmt
-choco install --limitoutput nugetpackageexplorer
+# choco install --limitoutput nugetpackageexplorer
 
 # TODO: Radeon or NVidia graphics? #
-choco install --limitoutput evga-precision-xoc
+# choco install evga-precision-xoc
 
 # System Nfo & Tuner
-choco install --limitoutput cue
-choco install --limitoutput cpu-z
-choco install --limitoutput gpu-z
-choco install --limitoutput hwinfo
-choco install --limitoutput intel-rst-driver
-choco install --limitoutput intel-xtu
-choco install --limitoutput gpg4win
-choco install --limitoutput treesizefree
+choco install cue
+choco install cpu-z
+choco install gpu-z
+choco install hwinfo
+# TODO: Test on Win Pro
+# choco install intel-rst-driver
+# choco install intel-xtu
+choco install gpg4win
+choco install treesizefree

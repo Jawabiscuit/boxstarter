@@ -1,20 +1,24 @@
+## Common Dev Tools
 # Tools devs normally want
 # NOTE: vscode is a separate script
 
-choco install --limitoutput sysinternals
-choco install --limitoutput dotnetcore-sdk
-choco install --limitoutput javaruntime
-choco install --limitoutput jdk8
-choco install --limitoutput git.install -params "'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
-choco install --limitoutput python
-choco install --limitoutput anaconda2
-choco install --limitoutput cygwin
-choco install --limitoutput 7zip.install
+choco install sysinternals
+choco install dotnetcore-sdk
+choco install javaruntime
+choco install jdk8
+choco install git.install -params "'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
+choco install python
+choco install anaconda2
+choco install cygwin
+choco install 7zip.install
 
 # File Xfer
-choco install --limitoutput winscp
-choco install --limitoutput putty
-choco install --limitoutput filezilla
+choco install winscp
+choco install putty
+choco install filezilla
 
-choco install chocolatey --limitoutput
-choco install boxstarter --limitoutput
+choco install chocolatey
+choco install choco-cleaner --version 0.0.7.3
+choco install boxstarter
+
+RefreshEnv

@@ -1,3 +1,4 @@
+## System Configuration
 
 $computername = "vrexton2"
 
@@ -22,8 +23,8 @@ if ($env:computername -ne $computername) {
 }
     
 # Set DNS upstreams
-Set-DNSClientServerAddress -InterfaceIndex $(Get-NetAdapter | Where-object {$_.Name -like "*Wi-Fi*" } | Select-Object -ExpandProperty InterfaceIndex) -ServerAddresses "8.8.8.8", "1.1.1.1", "2001:4860:4860::8888", "2001:4860:4860::8844"
+# Set-DNSClientServerAddress -InterfaceIndex $(Get-NetAdapter | Where-object {$_.Name -like "*Wi-Fi*" } | Select-Object -ExpandProperty InterfaceIndex) -ServerAddresses "8.8.8.8", "1.1.1.1", "2001:4860:4860::8888", "2001:4860:4860::8844"
 
 Set-StartScreenOptions -EnableBootToDesktop
 
-if(Test-PendingReboot) { Invoke-Reboot }
+if (Test-PendingReboot) { Invoke-Reboot }

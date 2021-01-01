@@ -1,15 +1,16 @@
-choco install --limitoutput visualstudio2017community
+## Visual Studio 2017 - GameDev
+choco install visualstudio2017community
 
 choco pin add -n=visualstudio2017community
 
 # Workloads for game development in engines like UE4
-choco install --limitoutput visualstudio2017-workload-manageddesktop
-choco install --limitoutput visualstudio2017-workload-nativedesktop
-choco install --limitoutput visualstudio2017-workload-universal
-choco install --limitoutput visualstudio2017-workload-universalbuildtools
-choco install --limitoutput visualstudio2017-workload-datascience
-choco install --limitoutput visualstudio2017-workload-nativegame
-choco install --limitoutput visualstudio2017-workload-managedgame
-choco install --limitoutput visualstudio2017-workload-nativecrossplat
+choco install visualstudio2017-workload-manageddesktop --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-nativedesktop --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-universal --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-universalbuildtools --cacheLocation "C:\vs_cache"
+# choco install visualstudio2017-workload-datascience --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-nativegame --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-managedgame --cacheLocation "C:\vs_cache"
+choco install visualstudio2017-workload-nativecrossplat --cacheLocation "C:\vs_cache"
 
-Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Microsoft Visual Studio\Community\Common7\IDE\devenv.exe"
+Install-ChocolateyPinnedTaskBarItem -TargetFilePath "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"
